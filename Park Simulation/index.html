@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CG Project</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html">
+    <h1 id="cg-project">CG PROJECT</h1>
+    <p>This the the mini project for the class of Computer Graphics of VII semester of NMAMIT.<br>
+      Project Repository : <a
+        href="https://github.com/kashyapmanu/CG-PROJECT">https://github.com/kashyapmanu/CG-PROJECT</a></p>
+    <hr>
+    <p><strong>Team Members</strong></p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>USN</th>
+          <th>Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>4NM17CS099</td>
+          <td>Manasa V</td>
+        </tr>
+        <tr>
+          <td>4NM17CS100</td>
+          <td>Manjunath Patkar</td>
+        </tr>
+        <tr>
+          <td>4NM17CS101</td>
+          <td>Manukashyap U V</td>
+        </tr>
+        <tr>
+          <td>4NM17CS102</td>
+          <td>Marlon Fernandes</td>
+        </tr>
+      </tbody>
+    </table>
+    <hr>
+    <p><strong>Tech used:</strong></p>
+    <ul>
+      <li>
+        <p>OpenGL</p>
+      </li>
+      <li>
+        <p>CodeBlocks</p>
+      </li>
+      <li>
+        <p>Ubuntu</p>
+      </li>
+    </ul>
+    <hr>
+    <p>Installing OpenGL on ubuntu and running it through code blocks:</p>
+    <pre><code>1 - Installing code blocks :
+    sudo apt install codeblocks
+2 - Installing openGL :
+    sudo apt-get update
+    sudo apt-get install freeglut3-dev
+3 - Change the linker setting in codeblocks : -lGL -lGLU -lglut
+</code></pre>
+    <hr>
+    <p><strong>Intro Page</strong><br>
+      Displaying the project name and the collaborators list.</p>
+    <p>Code:</p>
+    <pre><code>#include&lt;GL/glut.h&gt;
+
+void init()
+{
+    glClearColor(0.5,0,0.5,0.5);
+
+    glMatrixMode(GL_PROJECTION);
+
+    glOrtho(0,50,0,50,0,10);
+
+}
+
+void Display_on_screen(char *string)
+
+{
+    while(*string)
+    {		     
+	    glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,*string++);
+    }
+}
+
+void display()
+{
+
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    glColor3f(0.0,1.0,0.0);
+
+    glRasterPos2i(15,40);
+
+
+
+    glRasterPos3f(19.5,40,0);
+
+    Display_on_screen("Park Simulation");
+
+
+
+    glRasterPos3f(12,26,0);
+
+    Display_on_screen("Manasa V");
+
+
+
+    glRasterPos3f(21,26,0);
+
+    Display_on_screen("&lt;--&gt;");
+
+
+
+    glRasterPos3f(26,26,0);
+
+    Display_on_screen("4NM17CS099");
+
+
+
+    glRasterPos3f(12,24,0);
+
+    Display_on_screen("Manjunath Patkar");
+
+
+
+    glRasterPos3f(21,24,0);
+
+    Display_on_screen("&lt;--&gt;");
+
+
+
+    glRasterPos3f(26,24,0);
+
+    Display_on_screen("4NM17CS100");
+
+
+
+    glRasterPos3f(12,22,0);
+
+    Display_on_screen("Manukashyap U V");
+
+
+
+    glRasterPos3f(21,22,0);
+
+    Display_on_screen("&lt;--&gt;");
+
+
+
+    glRasterPos3f(26,22,0);
+
+    Display_on_screen("4NM17CS101");
+
+
+
+    glRasterPos3f(12,20,0);
+
+    Display_on_screen("Marlon Fernandes");
+
+
+
+    glRasterPos3f(21,20,0);
+
+    Display_on_screen("&lt;--&gt;");
+
+
+
+    glRasterPos3f(26,20,0);
+
+    Display_on_screen("4NM17CS102");
+
+
+
+    glColor3f(1.0,0.0,0.0);
+
+    glLineWidth(5);
+
+    glBegin(GL_LINES);
+
+    glVertex2i(16,39);
+
+    glVertex2i(28,39);
+
+    glEnd();
+
+    glFlush();
+
+}
+
+
+
+int main(int argc, char **argv)
+{
+
+    glutInit(&amp;argc,argv);
+
+    glutInitDisplayMode(GLUT_SINGLE|GLUT_RGB);
+
+    glutInitWindowPosition(1,1);
+
+    glutInitWindowSize(1400, 950);
+
+    glutCreateWindow("PROJECT");
+
+    init();
+
+    glutDisplayFunc(display);
+
+    glutMainLoop();
+
+}
+</code></pre>
+    <p>Result:</p>
+    <p><img src="./images/introPage.png" alt="Intropage Output"></p>
+  </div>
+</body>
+
+</html>
